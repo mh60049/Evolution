@@ -23,10 +23,31 @@ function showImg() {
   const lngSec = current.getSeconds();
   const lngSec10 = Math.floor(lngSec / 10);
 
-  if((lngSec10 % 2) === 0) {
-    strSet = 'A';
-  } else {
-    strSet = 'B';
+  switch(lngSec10) {
+    case 0:
+      strSet = 'A';
+      break;
+
+    case 1:
+      strSet = 'B';
+      break;
+
+    case 2:
+      strSet = 'C';
+      break;
+
+    case 3:
+      strSet = 'D';
+      break;
+
+    case 4:
+      strSet = 'E';
+      break;
+
+    case 5:
+      strSet = 'F';
+      break;
+      
   }
 
   let strURL = strSet + strDevID + ".JPG";
