@@ -1,5 +1,6 @@
 let strDevID = "1";  //Device ID
 let strSet = 'A';
+let strTimer = '';
 let myTimer;
 
 getDevID();
@@ -22,8 +23,7 @@ function showImg() {
 
   const lngSec = current.getSeconds();
   const lngSec10 = Math.floor(lngSec / 10);
-  document.getElementById('idSecond').textContent=lngSec.toString();
-
+  
   switch(lngSec10) {
     case 0:
       strSet = 'A';
@@ -50,6 +50,9 @@ function showImg() {
       break;
       
   }
+
+  strTimer = strSet + strDevID + '-' + lngSec.toString()
+  document.getElementById('idSecond').textContent = strTimer;
 
   let strURL = strSet + strDevID + ".JPG";
   let img1 = document.getElementById("idImg")
