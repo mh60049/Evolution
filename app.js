@@ -22,6 +22,7 @@ function showImg() {
 
   const lngSec = current.getSeconds();
   const lngSec10 = Math.floor(lngSec / 10);
+  document.getElementById('idSecond').textContent=lngSec.toString();
 
   switch(lngSec10) {
     case 0:
@@ -45,7 +46,7 @@ function showImg() {
       break;
 
     case 5:
-      strSet = 'F';
+      strSet = 'E';
       break;
       
   }
