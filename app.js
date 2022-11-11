@@ -1,6 +1,8 @@
 let strDevID = "1";  //Device ID
 let strSet = 'A';
 let strTimer = '';
+let lngT0 = 0;
+let lngLeft = 0;
 let myTimer;
 
 getDevID();
@@ -27,31 +29,38 @@ function showImg() {
   switch(lngSec10) {
     case 0:
       strSet = 'A';
+      lngT0 = 10;
       break;
 
     case 1:
       strSet = 'B';
+      lngT0 = 20;
       break;
 
     case 2:
       strSet = 'C';
+      lngT0 = 30;
       break;
 
     case 3:
       strSet = 'D';
+      lngT0 = 40;
       break;
 
     case 4:
       strSet = 'E';
+      lngT0 = 60;
       break;
 
     case 5:
       strSet = 'E';
+      lngT0 = 60;
       break;
       
   }
 
-  strTimer = strSet + strDevID + '-' + lngSec.toString()
+  lngLeft = lngT0 - lngSec;
+  strTimer = strSet + strDevID + '-' + lngLeft.toString()
   document.getElementById('idSecond').textContent = strTimer;
 
   let strURL = strSet + strDevID + ".JPG";
