@@ -3,6 +3,7 @@ let strSet = 'A';
 let strTimer = '';
 let lngT0 = 0;
 let lngLeft = 0;
+let strLeft = '';
 let myTimer;
 
 getDevID();
@@ -60,8 +61,13 @@ function showImg() {
   }
 
   lngLeft = lngT0 - lngSec;
-  strTimer = strSet + strDevID + '-' + lngLeft.toString()
+  strLeft = lngLeft.toString();
+  strTimer = strSet + strDevID + '-' + strLeft
   document.getElementById('idSecond').textContent = strTimer;
+
+  if (lngLeft === 1) {
+      window.speechSynthesis.speak(new SpeechSynthesisUtterance('change'));
+  }
 
   let strURL = strSet + strDevID + ".JPG";
   let img1 = document.getElementById("idImg")
