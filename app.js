@@ -66,7 +66,7 @@ function showImg() {
   document.getElementById('idSecond').textContent = strTimer;
 
   if (lngLeft === 1) {
-      window.speechSynthesis.speak(new SpeechSynthesisUtterance('change'));
+      window.speechSynthesis.speak(new SpeechSynthesisUtterance('change ' + strSet + '.'));
   }
 
   let strURL = strSet + strDevID + ".JPG";
